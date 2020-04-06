@@ -24,3 +24,7 @@ const route = router.get('/',(req,res,next)=>{
 
 app.use('/',route);
 
+//falando para o servidor ficar ouvindo a porta 3000
+server.listen(port);
+
+console.log("API rodando na porta : "+port);
