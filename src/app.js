@@ -2,6 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+
+//criando a conexao com banco online
+mongoose.connect('mongodb+srv://marcusfcb:mfcb4625@cluster0-8nqe9.azure.mongodb.net/test?retryWrites=true&w=majority');
+
 
 const app = express();
 
