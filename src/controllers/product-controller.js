@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
+const validationContract = require('../validators/fluent-validator');
 
 exports.get = (req, res, next) => {
     Product.find({ active: true }, 'title price slug tags'
@@ -65,6 +66,11 @@ exports.getBySlug = (req, res, next) => {
 
 
 exports.post = (req, res, next) => {
+
+    let contract = new ValidationContract();
+
+    
+
     var product = new Product(req.body);
     product.
         save()
