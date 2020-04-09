@@ -6,33 +6,33 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     title:{
         type:String,
-        required: true,
+        required: [true, 'titulo é obrigatório'],
         trim: true
         },
         slug:{
             type:String,
-            require:true,
+            require:[true, 'slug é obrigatório'],
             trim:true,
             index:true,
             unique:true
         },
         description:{
             type: String,
-            required:true,
+            required:[true, 'description é obrigatório'],
             trim:true
         },
         price:{
             type:Number,
-            required:true
+            required:[true, 'price é obrigatório'],
         },
         active:{
             type:Boolean,
-            required:true,
+            required:[true, 'active é obrigatório'],
             default:true
         },
         tags:[{
             type:String,
-            required:true
+            required:[true, 'tags é obrigatório'],
         }]
 });
 
