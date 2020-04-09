@@ -6,6 +6,7 @@ const controller = require('../controllers/product-controller');
 
 //Produtos
 router.get('/',controller.get);
+router.get('/:slug',controller.getBySlug);
 router.post('/',controller.post);
 router.put('/:id',controller.put);
 router.delete('/:id',controller.delete);
