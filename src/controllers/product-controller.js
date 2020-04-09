@@ -87,7 +87,18 @@ exports.put = (req, res, next) => {
             slug: req.body.slug
         }
     }).then(data => {
-        res.status(201).send({ message: 'Produto Atualizado com sucesso!'});
+        res.status(201).send({ message: 'Produto Atualizado com sucesso!' });
+    }).catch(e => {
+        res.status(400).send({
+            message: 'Falha',
+            data: e
+        });
+    });
+};
+
+exports.delete = (req, res, next) => {
+    Product.findByIdAndRemove(req.params.id).then(data => {
+        res.status(201).send({ message: 'Produto Removido com sucesso!' });
     }).catch(e => {
         res.status(400).send({
             message: 'Falha',
@@ -97,10 +108,4 @@ exports.put = (req, res, next) => {
 };
 
 
-exports.delete = (req, res, next) => {
-    const id = req.params.id;
-    res.status(201).send({
-        id: id,
-        item: 'delete'
-    });
-};
+
