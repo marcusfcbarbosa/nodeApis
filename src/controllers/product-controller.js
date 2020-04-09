@@ -79,12 +79,23 @@ exports.post = (req, res, next) => {
 };
 
 exports.put = (req, res, next) => {
-    const id = req.params.id;
-    res.status(201).send({
-        id: id,
-        item: req.body
+    Product.findByIdAndUpdate(req.params.id, {
+        $set: {
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price,
+            slug: req.body.slug
+        }
+    }).then(data => {
+        res.status(201).send({ message: 'Produto Atualizado com sucesso!'});
+    }).catch(e => {
+        res.status(400).send({
+            message: 'Falha',
+            data: e
+        });
     });
 };
+
 
 exports.delete = (req, res, next) => {
     const id = req.params.id;
@@ -93,4 +104,3 @@ exports.delete = (req, res, next) => {
         item: 'delete'
     });
 };
-
