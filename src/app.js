@@ -7,22 +7,21 @@ const mongoose = require('mongoose');
 //criando a conexao com banco online
 mongoose.connect('mongodb+srv://marcusfcb:mfcb4625@cluster0-8nqe9.azure.mongodb.net/test?retryWrites=true&w=majority');
 
-
 //Carregando os models
 const Product = require('./models/product');
 
-
-
 //carregar as rotas
 const index = require('./routes/index-route');
-const product = require('./routes/product-route');
+const productRoute = require('./routes/product-route');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({
+    extended:false
+}));
 
 
 app.use('/',index);
-app.use('/products',product);
+app.use('/products',productRoute);
 
 
 //exportando a aplicação
