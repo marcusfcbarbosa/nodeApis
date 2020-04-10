@@ -37,7 +37,17 @@ ValidationContract.prototype.isEmail = (value, message) => {
     }
 }
 
+ValidationContract.prototype.errors = () =>{
+    return errors;
+}
 
+ValidationContract.prototype.clear =() =>{
+    errors =[];
+}
 
+ValidationContract.prototype.isValid =() =>{
+    return errors.length == 0;
+}
 
+module.exports =ValidationContract;
 
