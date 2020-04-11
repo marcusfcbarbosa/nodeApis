@@ -9,10 +9,18 @@ mongoose.connect('mongodb+srv://marcusfcb:mfcb4625@cluster0-8nqe9.azure.mongodb.
 
 //Carregando os models
 const Product = require('./models/product');
+const Customer = require('./models/customer');
+const Order = require('./models/order');
 
-//carregar as rotas
+
+//rota padrao
 const index = require('./routes/index-route');
+
+//carregar as rotas do product
 const productRoute = require('./routes/product-route');
+
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
