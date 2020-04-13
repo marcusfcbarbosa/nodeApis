@@ -37,15 +37,20 @@ exports.authenticate = async (req, res, next) => {
             email: req.body.email,
             password: md5(req.body.password + global.SALT_KEY)
         });
-        if(!customer){
+
+        if (!customer) {
             res.status(401).send({
                 message: 'Usuario ou senha inválidos'
-            });    
+            });
             return;
         }
-        const token = await authService.generateToken({ email: customer.email, name: customer.name });
+        const token = await authService.generateToken({
+            id: customer._id,
+            email: customer.email,
+            name: customer.name
+        });
         res.status(201).send({
-            toke: token,
+            token: token,
             data: {
                 email: req.body.email,
                 name: req.body.name
@@ -57,6 +62,8 @@ exports.authenticate = async (req, res, next) => {
         });
     }
 };
+
+
 exports.get = async (req, res, next) => {
     try {
         var data = await repository.getAsync();
