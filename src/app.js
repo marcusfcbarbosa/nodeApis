@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 //criando a conexao com banco online
-mongoose.connect('mongodb+srv://marcusfcb:mfcb4625@cluster0-8nqe9.azure.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect(config.connectionString);
 
 //Carregando os models
 const Product = require('./models/product');
@@ -16,10 +17,10 @@ const Order = require('./models/order');
 //rota padrao
 const index = require('./routes/index-route');
 
-//carregar as rotas do product
+//carregar as rotas
 const productRoute = require('./routes/product-route');
-
-
+const customerRoute = require('./routes/customer-route');
+const orderRoute = require('./routes/order-route');
 
 
 app.use(bodyParser.json());
@@ -30,7 +31,8 @@ app.use(bodyParser.urlencoded({
 
 app.use('/',index);
 app.use('/products',productRoute);
-
+app.use('/customers',customerRoute);
+app.use('/orders',orderRoute);
 
 //exportando a aplicação
 module.exports = app;

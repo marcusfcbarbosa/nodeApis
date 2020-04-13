@@ -14,6 +14,9 @@ router.get('/tags/:tag',controller.getByTag);
 router.post('/',controller.post);
 router.put('/:id',controller.put);
 router.delete('/:id',controller.delete);
+//Async
+
+
 
 
 module.exports = router;
