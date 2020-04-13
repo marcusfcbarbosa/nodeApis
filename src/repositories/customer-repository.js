@@ -3,10 +3,9 @@
 const mongoose = require('mongoose');
 const Customer = mongoose.model('Customer');
 
-
 exports.getAsync = async () => {
     const res = await Customer.find({
-    }, 'name email');
+    }, 'name email password');
     return res;
 }
 
