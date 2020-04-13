@@ -31,6 +31,28 @@ exports.post = async (req, res, next) => {
     }
 };
 
+exports.get = async (req, res, next) => {
+    try {
+        var data = await repository.getAsync();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao processar a requisição'
+        });
+    }
+};
+
+exports.delete = async (req, res, next) => {
+    try {
+        await repository.deleteAsync(req.params.id);
+        res.status(201).send({ message: 'Cliente removido com sucesso!!' });
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao processar a requisição' + e.message
+        });
+    }
+};
+
 exports.authenticate = async (req, res, next) => {
     try {
         const customer = await repository.authenticate({
@@ -64,24 +86,38 @@ exports.authenticate = async (req, res, next) => {
 };
 
 
-exports.get = async (req, res, next) => {
-    try {
-        var data = await repository.getAsync();
-        res.status(200).send(data);
-    } catch (e) {
-        res.status(500).send({
-            message: 'Falha ao processar a requisição'
+exports.refreshToken = async (req, res, next) => {
+    try{
+        const token = req.body.token || req.query.token || req.headers['x-access-token'];
+        //recuperando dados do usuario logado
+        const data = await authService.decodeToken(token);
+        const customer = await repository.getById(data.id);
+        if (!customer) {
+            res.status(401).send({
+                message: 'Cliente não encontrado'
+            });
+            return;
+        }
+    
+        const tokenData = await authService.generateToken({
+            id: customer._id,
+            email: customer.email,
+            name: customer.name
         });
-    }
-};
+        res.status(201).send({
+            token: tokenData,
+            data: {
+                email: req.body.email,
+                name: req.body.name
+            }
+        });
 
-exports.delete = async (req, res, next) => {
-    try {
-        await repository.deleteAsync(req.params.id);
-        res.status(201).send({ message: 'Cliente removido com sucesso!!' });
-    } catch (e) {
+    }catch(e){
         res.status(500).send({
             message: 'Falha ao processar a requisição' + e.message
         });
     }
+    
+
+    
 };

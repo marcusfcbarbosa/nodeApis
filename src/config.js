@@ -1,4 +1,5 @@
 'use strict';
+
 global.SALT_KEY='80b97d3d-25dc-4a25-a2df-9451733e8741';
 global.EMAIL_TMPL='<strong> Olá  {0}</strong>';
 global.EMAIL_SENDER='marcusfcbarbosa@hotmail.com';
