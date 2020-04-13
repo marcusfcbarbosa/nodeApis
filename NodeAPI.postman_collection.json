@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "0674ab3f-f260-4282-9dda-9994ec33a597",
+		"name": "NodeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teste Node API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Teste\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT REQUEST",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/12343",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"12343"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRjM2I2NDdiNDc2MGQzNGM2Mzg2MSIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUgMiIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJpYXQiOjE1ODY4MDc3NTAsImV4cCI6MTU4Njg5NDE1MH0.MDT_GCJiXCdgdwsimP72Nv8McfzHP67_LpqN-rsrP1A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Monitor Gamer1\",\n\t\"slug\":\"monitor-gamer1\",\n\t\"description\":\"Monitor Gamer1\",\n\t\"price\":\"60032\",\n\t\"active\":true,\n\t\"tags\":[\"monitor1\",\"games\",\"informatica\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "x-access-token",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/12343",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/12343",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"12343"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/mouse-gamer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/mouse-gamer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"mouse-gamer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/admin/5e8f527f174f2116b8331fb6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/admin/5e8f527f174f2116b8331fb6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"admin",
+						"5e8f527f174f2116b8331fb6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/5e8f527f174f2116b8331fb6",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Monitor Gamer2\",\n    \"slug\": \"monitor-gamer2\",\n    \"price\": 6000,\n    \"description\":\"Monitor Gamer2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/5e91d5973714451e786c4052",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"5e91d5973714451e786c4052"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/5e8f527f174f2116b8331fb6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/5e91f86de5ef94348cae8992",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"5e91f86de5ef94348cae8992"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/tags/monitor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/tags/monitor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"tags",
+						"monitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Marcus Teste\",\n\t\"email\": \"marcusfcbarbosa@hotmail.com\",\n\t\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRiZDE0MTc1MTIwMWQyMDEwNzMzOCIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGhvdG1haWwuY29tIiwibmFtZSI6Ik1hcmN1cyBUZXN0ZSIsImlhdCI6MTU4NjgwNjA0NCwiZXhwIjoxNTg2ODkyNDQ0fQ.OjYyoZumJLn03l2kFhRs4f6PJ_U9355v86TClSBHdlg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ORDERS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRhOTc5MDIwODg5MjFlNDQ4OTIxMiIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUiLCJpYXQiOjE1ODY4MDIxMjMsImV4cCI6MTU4Njg4ODUyM30.x5JpbSFpGaiBaaJySsU_EpaNuGdllV8EWc9ymAtvCqY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"items\":[\n\t\t{\n\t\t\t\"quantity\":\"12\",\n\t\t\t\"price\":\"452109\",\n\t\t\t\"product\":\"5e91d5973714451e786c4052\"\n\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDERS GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRhOTc5MDIwODg5MjFlNDQ4OTIxMiIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUiLCJpYXQiOjE1ODY4MDIxMjMsImV4cCI6MTU4Njg4ODUyM30.x5JpbSFpGaiBaaJySsU_EpaNuGdllV8EWc9ymAtvCqY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRhOTc5MDIwODg5MjFlNDQ4OTIxMiIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUiLCJpYXQiOjE1ODY4MDIxMjMsImV4cCI6MTU4Njg4ODUyM30.x5JpbSFpGaiBaaJySsU_EpaNuGdllV8EWc9ymAtvCqY",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CUSTOMER",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRhOTc5MDIwODg5MjFlNDQ4OTIxMiIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUiLCJpYXQiOjE1ODY4MDUzNjEsImV4cCI6MTU4Njg5MTc2MX0.yMyKqIt-oThplnvFqbSgdLfh5xRQjJ8uaRFG69u-b9U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/customers/5e94bcad4572f73bc8d90f75",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"5e94bcad4572f73bc8d90f75"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTHENTICATE CUSTOMER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Marcus Teste 2\",\n\t\"email\": \"marcusfcbarbosa@gmail.com\",\n\t\"password\":\"123456\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/customers/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REFRESH TOKEN CUSTOMER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTRhOTc5MDIwODg5MjFlNDQ4OTIxMiIsImVtYWlsIjoibWFyY3VzZmNiYXJib3NhQGdtYWlsLmNvbSIsIm5hbWUiOiJNYXJjdXMgVGVzdGUiLCJpYXQiOjE1ODY4MDUzNTIsImV4cCI6MTU4Njg5MTc1Mn0.JZq15DCyYhM96jwE9dIQP--w2R6McxvUAHTE5-IwUcE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/customers/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
