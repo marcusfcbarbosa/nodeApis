@@ -101,4 +101,3 @@ Criando APIs com Node
 	npm install jsonwebtoken@7.4.0 --save
 		
 		
-https://www.youtube.com/watch?v=cEpx8ox9YoI&list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn&index=32
