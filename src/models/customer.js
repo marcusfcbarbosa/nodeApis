@@ -10,7 +10,8 @@ const schema = new Schema({
     },
     email: {
         type: String,
-        required: [true, 'e-mail é obrigatório']
+        required: [true, 'e-mail é obrigatório'],
+        unique: true
     },
     password: {
         type: String,

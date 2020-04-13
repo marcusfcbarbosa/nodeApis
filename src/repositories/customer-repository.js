@@ -13,3 +13,16 @@ exports.createAsync = async (data) => {
     var customer = new Customer(data);
     await customer.save();
 }
+
+exports.deleteAsync = async (id) => {
+    await Customer.findByIdAndRemove(id);
+}
+
+exports.authenticate = async(data) =>{
+    const res = await Customer.find({
+        email:data.email,
+        password: data.password
+    });
+    return res;
+}
+
