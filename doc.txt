@@ -1,0 +1,104 @@
+Criando APIs com Node
+
+	1- instalar nodejs	
+
+	https://nodejs.org/en/
+----------------------------------------------------------------------------------------------------
+	2- verificanbdo a versao
+
+	npm --version
+
+	node --version
+----------------------------------------------------------------------------------------------------
+	3- criando um diretorio padrao seguro 
+	C:\Users\dev
+	cria uma pasta 
+	3.1-mkdir node-str
+----------------------------------------------------------------------------------------------------
+	4- iniciar uma aplicação do node (Ele baixa um arquivo package.json)
+
+	npm init -y
+
+	Obs: node somente interpreta javascript (precisa instalar tudo nele)
+----------------------------------------------------------------------------------------------------
+	5- criando um servidor http
+
+	npm install http express debug --save
+	
+	--save atualiza o package.json 
+	
+	express prove toda parte do MVC
+	 
+	http  fica ouvindo uma porta envia e recebe requisições
+----------------------------------------------------------------------------------------------------	
+	6- instalar os pacotes
+
+	npm install
+----------------------------------------------------------------------------------------------------
+	7- criando o servidor web
+
+----------------------------------------------------------------------------------------------------
+	8- para rodar a aplicação
+		node .\server.js
+----------------------------------------------------------------------------------------------------
+	9- instalando nodemon
+
+	ouvindo os arquivos js da aplicação, reseta o servidor automaticamente
+	um watcher
+	
+	Para o windows precisa mexer em Politicas de execução (about_Execution_Policies)
+	
+	Siga tutorial: https://support.microsoft.com/pt-br/help/2411920/you-can-t-run-scripts-in-azure-active-directory-module-for-windows-pow
+	
+	npm install nodemon -g instalando de maneira global
+	
+	Para executar aponte para o arquivo server.js
+	
+	nodemon .\bin\server.js   (!!!!IMPORTANTE!!!!!)
+----------------------------------------------------------------------------------------------------
+	10-instalando Body parser, usado para conversor o corpo da requisicao em formato json
+
+	npm install body-parser --save
+----------------------------------------------------------------------------------------------------
+	11- Instalando mongoDB onLine
+
+	https://mlab.com/
+----------------------------------------------------------------------------------------------------
+	12- Criando conexao com Banco de dados e Collections 
+
+	npm install mongoose --save
+
+	Mongoose tbm modela as entidades da base
+
+----------------------------------------------------------------------------------------------------
+	13- Json Produtos
+	{
+		"title":"Mouse Gamer",
+		"slug":"mouse-gamer",
+		"description":"Mouse Gamer",
+		"price":"300",
+		"active":true,
+		"tags":["informatica","mouse","games"]
+	}
+	
+----------------------------------------------------------------------------------------------------	
+	14- Criando um GUID
+	
+	npm install guid --save
+	
+----------------------------------------------------------------------------------------------------	
+	15 - criptografando senha
+	
+	md5
+	
+	npm install md5 --save
+----------------------------------------------------------------------------------------------------	
+		16- envio de email usando sendgrid ( http://sendgrid.com/ )
+		npm instal sendgrid@2.0.0 --save
+----------------------------------------------------------------------------------------------------	
+	17- Autenticação com JWT
+	
+	npm install jsonwebtoken@7.4.0 --save
+		
+		
+https://www.youtube.com/watch?v=cEpx8ox9YoI&list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn&index=32
