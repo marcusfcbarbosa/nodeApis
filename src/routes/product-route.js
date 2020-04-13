@@ -16,8 +16,4 @@ router.put('/:id',authService.authorize,controller.put);
 
 router.delete('/:id',authService.authorizeAdmin,controller.delete);//admin
 
-
-
-
-
 module.exports = router;
